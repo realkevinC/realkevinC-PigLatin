@@ -17,6 +17,17 @@ public class PigLatin {
      * @return the pig latin form of in.
      */
     public String returnPigLatin(String in){
-        return "";
+        String[] words = in.split("\\s+");
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < words.length; i++){
+            String word = words[i];
+            String pigLatin = word.substring(1) + word.charAt(0) + "ay";
+            sb.append(pigLatin);
+            // edge case for sentence not the last word in a sentence
+            // if(i < words.length - 1){
+            //     sb.append(" ");
+            // }
+        }
+        return sb.toString();
     }
 }
